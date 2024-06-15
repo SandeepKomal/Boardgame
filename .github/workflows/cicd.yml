@@ -56,11 +56,11 @@ jobs:
 
     - name: Build Docker Image
       run: |
-        docker build -t komal/boardgame:latest .
+        docker build -t sandeepkomalpothu/boardgame:latest .
         
     - name: Trivy Image Scan
       run: |
-        trivy image --format table -o trivy-image-report.html komal/boardgame:latest
+        trivy image --format table -o trivy-image-report.html sandeepkomalpothu/boardgame:latest
 
     - name: Login to Docker Hub
       uses: docker/login-action@v3
@@ -70,6 +70,6 @@ jobs:
 
     - name: Push Docker Image
       run: |
-          docker push komal/boardgame:latest
+          docker push sandeepkomalpothu/boardgame:latest
 
 
